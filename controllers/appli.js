@@ -2,7 +2,7 @@ exports.getIndex = (req, res, next) => {
 
         res.render('appli/index', {
         //   prods: products,
-          pageTitle: 'Shop',
+          pageTitle: 'Que-faire ? 🤔',
           path: '/',
         });
   };
@@ -10,7 +10,7 @@ exports.getIndex = (req, res, next) => {
   exports.getListe = (req, res, next) => {
     res.render('appli/liste', {
         //   prods: products,
-          pageTitle: 'Shop',
+          pageTitle: "Liste d'envies",
           path: '/liste',
         });
 }

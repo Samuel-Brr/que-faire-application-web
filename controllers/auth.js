@@ -1,7 +1,7 @@
 exports.getInscription = (req, res, next) => {
     res.render('auth/inscription', {
         //   prods: products,
-          pageTitle: 'Shop',
+          pageTitle: 'Inscription',
           path: '/auth/inscription',
         });
 }
@@ -9,7 +9,7 @@ exports.getInscription = (req, res, next) => {
 exports.getConnexion = (req,res,next) => {
     res.render('auth/connexion', {
         // prods: products,
-        pageTitle: 'connexion',
+        pageTitle: 'Connexion',
         path: '/auth/connexion',        
       })
 }
