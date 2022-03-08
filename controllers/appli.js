@@ -7,10 +7,14 @@ exports.getIndex = (req, res, next) => {
         });
   };
 
-  exports.getListe = (req, res, next) => {
+exports.getListe = (req, res, next) => {
     res.render('appli/liste', {
         //   prods: products,
           pageTitle: "Liste d'envies",
           path: '/liste',
         });
+}
+
+exports.postListe = (req,res,next) => {
+    console.log(req.body)
 }

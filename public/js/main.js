@@ -1,4 +1,7 @@
 const bouton = document.getElementById("btn-carte")
+let monActivite
+
+//...............     bouton générer activité     ..........................
 
 const getActivite = () => {
     console.log("clicked !")
@@ -11,8 +14,25 @@ const getActivite = () => {
 
             titre.innerHTML = activite
 
+            monActivite = data
+
         })
         .catch(err=>console.log(err))
 }
 
 bouton.addEventListener('click', getActivite)
+
+//...............     bouton ajouter à la liste d'envies     ..........................
+
+
+const boutonAjout = document.getElementById("btn-ajout")
+
+const postActivite = () => {
+    fetch("http://localhost:4040/liste", {
+        method: 'POST',
+        body: JSON.stringify(monActivite),
+        headers: {'content-type': 'application/json'}
+    })
+}
+
+boutonAjout.addEventListener('click', postActivite)

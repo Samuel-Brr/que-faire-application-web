@@ -8,4 +8,6 @@ router.get('/', appliController.getIndex );
 
 router.get('/liste', appliController.getListe);
 
+router.post('/liste', appliController.postListe)
+
 module.exports = router
