@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require('express');
+const { default: mongoose } = require('mongoose');
 const path = require('path');
-
 
 
 const errorController = require('./controllers/error.js');
@@ -23,7 +23,15 @@ app.use('/auth', authRoutes);
 app.use(errorController.get404);
 
 
+mongoose
+    .connect(
+        "mongodb+srv://Sml-Brr:YVmG4mNq24wxbku2@cluster0.jt4fy.mongodb.net/queFaire?retryWrites=true&w=majority"
+    )
+    .then(
+        console.log("Connected to database !"),
+        app.listen(4040, ()=>{
+        console.log('App listening on Port 4040...')
+    })
+    )
+    .catch(err => console.log(err))
 
-app.listen(4040, ()=>{
-    console.log('App listening on Port 4040...')
-})
