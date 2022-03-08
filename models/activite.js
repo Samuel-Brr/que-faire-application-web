@@ -25,7 +25,7 @@ const activiteSchema = new Schema({
     },
     link: {
         type: String,
-        required: true
+        
     },
     key: {
         type: String,

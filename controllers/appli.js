@@ -1,3 +1,5 @@
+const Activite = require("../models/activite")
+
 exports.getIndex = (req, res, next) => {
 
         res.render('appli/index', {
@@ -16,5 +18,25 @@ exports.getListe = (req, res, next) => {
 }
 
 exports.postListe = (req,res,next) => {
-    console.log(req.body)
+    const activity = req.body.activity
+    console.log(activity)
+    const accessibility = req.body.accessibility
+    const type = req.body.type
+    const participants = req.body.participants
+    const price = req.body.price
+    const link = req.body.link
+    const key = req.body.key
+
+    const activite = new Activite({
+      activity: activity,
+      accessibility: accessibility,
+      type: type,
+      participants: participants,
+      price: price,
+      link: link,
+      key: key
+    })
+
+    activite.save()
+    res.end()
 }
