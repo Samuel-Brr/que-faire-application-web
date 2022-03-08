@@ -1,5 +1,6 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 
@@ -14,6 +15,8 @@ app.set('views', 'views');
 
 const appliRoutes = require('./routes/appli');
 const authRoutes = require('./routes/auth');
+
+app.use(bodyParser.urlencoded({ extended: false })); // Permet d'avoir accés au body de la requete via l 'url // données souvent transmises via formulaire
 
 app.use(express.static(path.join(__dirname, 'public')));
 

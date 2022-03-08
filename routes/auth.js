@@ -8,4 +8,6 @@ router.get('/connexion', authController.getConnexion);
 
 router.get('/inscription', authController.getInscription);
 
+router.post('/inscription', authController.postInscription)
+
 module.exports = router

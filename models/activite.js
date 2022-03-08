@@ -31,6 +31,11 @@ const activiteSchema = new Schema({
         type: String,
         required: true
     },
+    utilisateurId:{
+        type:Schema.Types.ObjectId,
+        ref: 'Utilisateur',
+        required: true
+    }
 
 })
 
