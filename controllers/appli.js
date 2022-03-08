@@ -19,7 +19,6 @@ exports.getListe = (req, res, next) => {
 
 exports.postListe = (req,res,next) => {
     const activity = req.body.activity
-    console.log(activity)
     const accessibility = req.body.accessibility
     const type = req.body.type
     const participants = req.body.participants
