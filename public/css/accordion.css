@@ -49,6 +49,7 @@
 
   .panel-buttons{
     display: flex;
+    margin-bottom: 10px;
   }
 
   .panel-buttons button{
@@ -58,7 +59,7 @@
   }
 
   .panel-buttons button:hover{
-    background-color: #444;
+    background-color: rgba(68, 68, 68, 0.658);
     cursor: pointer;
     color: white;
   }
