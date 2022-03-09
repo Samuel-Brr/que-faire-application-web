@@ -47,7 +47,12 @@ exports.postConnexion = (req, res, next) => {
           .then(doMatch => {
             if (doMatch) {
               console.log("çA Match ! 🥳")
-              return res.end() 
+              req.session.isLoggedIn = true;
+              req.session.user = user;
+              return req.session.save(err => {
+                console.log(err);
+                res.redirect('/');
+              });
             }
             console.log(user)
             return res.status(422).render('auth/connexion', {
