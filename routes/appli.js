@@ -10,4 +10,6 @@ router.get('/liste', appliController.getListe);
 
 router.post('/liste', appliController.postListe)
 
+router.post('/liste/delete/:activiteId',)
+
 module.exports = router

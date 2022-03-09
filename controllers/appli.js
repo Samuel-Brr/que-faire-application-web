@@ -43,3 +43,7 @@ exports.postListe = (req,res,next) => {
     activite.save()
     res.end()
 }
+
+exports.deleteListItem = (req,res,next) => {
+  
+}

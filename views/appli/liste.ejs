@@ -8,8 +8,8 @@
             <h1>Ma liste d'envies! 😎</h1>
             <section class="accordion-container">
                 <% for (let activite of activites) { %>
-                    <button class="accordion"><h2><%= activite.activity %></h2></button>
-                        <div class="panel">
+                    <button id="<%= activite._id %>" class="accordion"><h2><%= activite.activity %></h2></button>
+                        <article class="panel">
                             <p>
                                 Accessibility: <strong><%= activite.accessibility %></strong>
                             </p>
@@ -26,14 +26,11 @@
                                 <%= activite.link %>
                             </p>
                             <div class="panel-buttons">
-                                <form action="delete" method="POST">
-                                    <button type="submit">DELETE</button>
-                                </form>
-                                <form action="edit" method="POST">
-                                    <button type="submit">Add Comment</button>
-                                </form>
+                                <input type="hidden" value="<%= activite._id %>" name="activiteId">
+                                <button type="button" onclick="deleteActivite(this)">DELETE</button>                         
+                                <button type="submit">Add Comment</button>
                             </div>
-                        </div>
+                        </article>
                 <% } %>        
             </section>
         </div>
@@ -44,5 +41,6 @@
             <p>Price: A factor describing the cost of the event with zero being free [0, 1]</p>
         </section>
     </main>
+    <script src="/js/utilisateur.js"></script>
     <script src="/js/accordion.js"></script>
     <%- include('../includes/end.ejs') %>
