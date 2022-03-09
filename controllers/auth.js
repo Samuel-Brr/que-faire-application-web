@@ -32,7 +32,38 @@ exports.postConnexion = (req, res, next) => {
       errorMessage: errors.array()[0].msg
     });
   }
-}
+
+  Utilisateur.findOne({ email: email })
+      .then(user => {
+        if (!user) {
+          return res.status(422).render('auth/connexion', {
+            pageTitle: 'Connexion',
+            path: 'connexion',
+            errorMessage: 'Utilisateur inexistant 😕'
+          });
+        }
+        bcrypt
+          .compare(password, user.password)
+          .then(doMatch => {
+            if (doMatch) {
+              console.log("çA Match ! 🥳")
+              return res.end() 
+            }
+            console.log(user)
+            return res.status(422).render('auth/connexion', {
+              pageTitle: 'Connexion',
+              path: 'connexion',
+              errorMessage: 'Mot de passe ou email incorrecte 😖'
+            });
+          })
+          .catch(err => {
+            console.log(err);
+            res.redirect('connexion');
+          });
+      })
+      .catch(err => console.log(err));
+  };
+
 
 exports.postInscription = (req,res,next) => {
   const email = req.body.email
