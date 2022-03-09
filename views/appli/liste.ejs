@@ -25,6 +25,9 @@
                             <p>
                                 <%= activite.link %>
                             </p>
+                            <p id="comment-<%= activite._id %>">
+
+                            </p>
                             <div class="panel-buttons">
                                 <input type="hidden" value="<%= activite._id %>" name="activiteId">
                                 <button type="button" onclick="deleteActivite(this)">DELETE</button>                         
@@ -36,8 +39,10 @@
 
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p>Some text in the Modal..</p>
+                                        <span class="close">❌</span>
+                                        <p>Add / Edit your comment:</p>
+                                        <textarea name="" id="textarea-<%= activite._id %>" cols="30" rows="10"></textarea>
+                                        <button style="display: block;" onclick="editComment(this)">Add / Edit</button>
                                     </div>
 
                                 </div>
