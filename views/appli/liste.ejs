@@ -29,10 +29,10 @@
                                 <input type="hidden" value="<%= activite._id %>" name="activiteId">
                                 <button type="button" onclick="deleteActivite(this)">DELETE</button>                         
                                 <!-- Trigger/Open The Modal -->
-                                <button id="myBtn">Add / Edit Comment</button>
+                                <button id="myBtn-<%= activite._id %>" onclick="openModal(this)">Add / Edit Comment</button>
 
                                 <!-- The Modal -->
-                                <div id="myModal" class="modal">
+                                <div id="myModal-<%= activite._id %>" class="modal">
 
                                     <!-- Modal content -->
                                     <div class="modal-content">
