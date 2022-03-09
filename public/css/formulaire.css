@@ -24,3 +24,12 @@
     font: inherit;
     border-radius: 2px;
   }
+
+  .errorMsg{
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.034);
+    padding: 5px 12px;
+    color: red;
+
+    margin-bottom: 15px;
+  }
