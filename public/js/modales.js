@@ -44,4 +44,12 @@ const editComment = (btn) => {
 
     comment.innerHTML = `Commentaire: ${commentValue}`
     modal.style.display = "none";
+
+    fetch(`http://localhost:4040/liste/update/${activiteId}`,{
+        method: 'PUT',
+        body: JSON.stringify({commentaire: commentValue}),
+        headers: {'content-type': 'application/json'}
+    })
+        .then(() => window.alert("Nouveaux commentaire bien enregistré ! 😁"))
+        .catch(err => console.log(err))
 }

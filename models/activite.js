@@ -31,6 +31,9 @@ const activiteSchema = new Schema({
         type: String,
         required: true
     },
+    commentaire: {
+        type: String,
+    },
     // utilisateurId:{
     //     type:Schema.Types.ObjectId,
     //     ref: 'Utilisateur',

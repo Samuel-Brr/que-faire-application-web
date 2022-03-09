@@ -37,7 +37,8 @@ exports.postListe = (req,res,next) => {
       participants: participants,
       price: price,
       link: link,
-      key: key
+      key: key,
+      commentaire: "",
     })
 
     activite.save()
@@ -55,4 +56,19 @@ exports.deleteListItem = (req,res,next) => {
     
     return Activite.deleteOne({ _id: activiId});
   })
+  res.end()
+}
+
+exports.updateCommentaire = (req,res,next) => {
+  const activiId = req.params.activiteId;
+  const commentaireValue = req.body.commentaire
+  Activite.findOne({_id: activiId})
+  .then(activite => {
+    if (!activite) {
+      return next(new Error('Activité introuvable 😬'));
+    }
+    
+    return Activite.updateOne({ _id: activiId}, {commentaire: commentaireValue});
+  })
+  res.end()
 }
