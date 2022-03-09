@@ -94,4 +94,11 @@ exports.postInscription = (req,res,next) => {
       res.redirect("connexion")
     })
 
-} 
+}
+
+exports.postDeconnexion = (req, res, next) => {
+  req.session.destroy((err)=>{
+    console.log(err)
+    res.redirect('/');
+  })
+}

@@ -6,7 +6,11 @@
         <ul>
             <% if (isAuthenticated) { %>
                 <li><a href="/liste">Liste d'envies</a></li>
-                <li><a href="#">Se déconnecter</a></li>
+                <li>
+                    <form action="/auth/deconnexion" method="POST">
+                        <button type="submit">Se déconnecter</button>
+                    </form>
+                </li>
             <% } %>
             <% if (!isAuthenticated) { %>
                 <li><a href="/auth/connexion">Se connecter</a></li>
