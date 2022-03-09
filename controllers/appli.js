@@ -10,8 +10,8 @@ exports.getIndex = (req, res, next) => {
   };
 
 exports.getListe = (req, res, next) => {
-  Activite.find()
-    .then(activites => {
+  Activite.find({utilisateurId: req.user._id})
+  .then(activites => {
       res.render('appli/liste', {
             activites: activites,
             pageTitle: "Liste d'envies",
@@ -39,6 +39,7 @@ exports.postListe = (req,res,next) => {
       link: link,
       key: key,
       commentaire: "",
+      utilisateurId: req.user
     })
 
     activite.save()

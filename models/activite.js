@@ -34,11 +34,11 @@ const activiteSchema = new Schema({
     commentaire: {
         type: String,
     },
-    // utilisateurId:{
-    //     type:Schema.Types.ObjectId,
-    //     ref: 'Utilisateur',
-    //     required: true
-    // }
+    utilisateurId:{
+        type:Schema.Types.ObjectId,
+        ref: 'Utilisateur',
+        required: true
+    }
 
 })
 
