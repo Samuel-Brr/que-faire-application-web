@@ -1,4 +1,2 @@
-Modifier l'ui en fonction du statut de connection
-
 Sécuriser les routes en fonction du statut de connection
 
