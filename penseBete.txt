@@ -1,1 +1,6 @@
-Render la liste d'activité sur l'ui depuis la bd
+Ajouter un bouton logout
+
+Modifier l'ui en fonction du statut de connection
+
+Sécuriser les routes en fonction du statut de connection
+

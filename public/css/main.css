@@ -42,7 +42,7 @@ main{
 .carte-activite{
     border: 1px solid black;
     height: 300px;
-    width: 200px;
+    width: 250px;
     padding: 20px 10px;
 
     display: flex;
@@ -50,6 +50,19 @@ main{
     justify-content: space-between;
 
 }
+
+
+.carte-boutons button{
+  padding: 5px 12px;
+  margin-bottom: 10px;
+}
+
+.carte-boutons button:hover{
+  cursor: pointer;
+  background-color: rgba(68, 68, 68, 0.582);
+  color: white;
+}
+
 
 /*..........       styles des modales  ⬇     ............. */
 
