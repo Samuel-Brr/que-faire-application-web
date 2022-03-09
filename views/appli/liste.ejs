@@ -7,22 +7,42 @@
         <div class="liste-content">
             <h1>Ma liste d'envies! 😎</h1>
             <section class="accordion-container">
-                <button class="accordion">Section 1</button>
-                    <div class="panel">
-                    <p>Lorem ipsum...</p>
-                    </div>
-    
-                    <button class="accordion">Section 2</button>
-                    <div class="panel">
-                    <p>Lorem ipsum...</p>
-                    </div>
-    
-                    <button class="accordion">Section 3</button>
-                    <div class="panel">
-                    <p>Lorem ipsum...</p>
-                    </div>
+                <% for (let activite of activites) { %>
+                    <button class="accordion"><h2><%= activite.activity %></h2></button>
+                        <div class="panel">
+                            <p>
+                                Accessibility: <strong><%= activite.accessibility %></strong>
+                            </p>
+                            <p>
+                                Type of the activity: <strong><%= activite.type %></strong>
+                            </p>
+                            <p>
+                                Participants: <strong><%= activite.participants %></strong>
+                            </p>
+                            <p>
+                                Price: <strong><%= activite.price %> </strong>
+                            </p>
+                            <p>
+                                <%= activite.link %>
+                            </p>
+                            <div class="panel-buttons">
+                                <form action="delete" method="POST">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                                <form action="edit" method="POST">
+                                    <button type="submit">Add Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                <% } %>        
             </section>
         </div>
+        <section class="activites-info">
+            <p>Accessibility: A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0] </p>
+            <p>Type: Type of the activity, ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"] </p>
+            <p>Participants: The number of people that this activity could involve [0, n]</p>
+            <p>Price: A factor describing the cost of the event with zero being free [0, 1]</p>
+        </section>
     </main>
     <script src="/js/accordion.js"></script>
     <%- include('../includes/end.ejs') %>

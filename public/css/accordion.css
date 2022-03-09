@@ -3,17 +3,24 @@
     flex-direction: column;
 }
 
-
+.liste h1{
+  margin-bottom: 15px;
+}
 
 
 /* ///////////////////////////////////////////////////////////////////////////////// */
 /* Style the buttons that are used to open and close the accordion panel */
+.accordion-container{
+  margin-bottom: 60px;
+}
+
 .accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
     padding: 18px;
     width: 100%;
+    max-width: 700px;
     text-align: left;
     border: none;
     outline: none;
@@ -27,9 +34,32 @@
   
   /* Style the accordion panel. Note: hidden by default */
   .panel {
+    margin: 0 auto;
+    max-width: 700px;
     padding: 0 18px;
     background-color: white;
     display: none;
     overflow: hidden;
+
+    text-align: left;
   }
 
+  .panel-buttons{
+    display: flex;
+  }
+
+  .panel-buttons button{
+    padding: 5px 12px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
+  .panel-buttons button:hover{
+    background-color: #444;
+    cursor: pointer;
+    color: white;
+  }
+
+.activites-info{
+  text-align: left;
+}

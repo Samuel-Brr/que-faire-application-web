@@ -10,11 +10,15 @@ exports.getIndex = (req, res, next) => {
   };
 
 exports.getListe = (req, res, next) => {
-    res.render('appli/liste', {
-        //   prods: products,
-          pageTitle: "Liste d'envies",
-          path: '/liste',
-        });
+  Activite.find()
+    .then(activites => {
+      res.render('appli/liste', {
+            activites: activites,
+            pageTitle: "Liste d'envies",
+            path: '/liste',
+          });
+    })
+    .catch(err=>console.log(err))
 }
 
 exports.postListe = (req,res,next) => {
