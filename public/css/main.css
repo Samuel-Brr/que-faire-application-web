@@ -63,6 +63,15 @@ main{
   color: white;
 }
 
+#btn-deconnexion{
+  border: none;
+  background-color: white;
+}
+
+#btn-deconnexion:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /*..........       styles des modales  ⬇     ............. */
 
