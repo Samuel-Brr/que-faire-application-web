@@ -7,11 +7,15 @@
   margin-bottom: 15px;
 }
 
+.liste-content{
+  width: 60vw;
+}
 
 /* ///////////////////////////////////////////////////////////////////////////////// */
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion-container{
   margin-bottom: 60px;
+  width: 100%;
 }
 
 .accordion {
@@ -20,7 +24,6 @@
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    max-width: 700px;
     text-align: left;
     border: none;
     outline: none;
@@ -35,7 +38,7 @@
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     margin: 0 auto;
-    max-width: 700px;
+    width: 100%;
     padding: 0 18px;
     background-color: white;
     display: none;

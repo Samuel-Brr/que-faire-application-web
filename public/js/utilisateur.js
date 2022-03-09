@@ -1,25 +1,16 @@
 const deleteActivite = (btn) => {
     const activiteId = btn.parentNode.querySelector('[name=activiteId]').value
-    const productElement = document.getElementById(`${activiteId}`)
+    const accordionElement = document.getElementById(`${activiteId}`)
+    const panelElement = document.getElementById(`panel-${activiteId}`)
 
-    console.log(activiteId)
-    console.log(productElement)
     
-    // fetch(`/liste/delete/${activiteId}`,{
-    //     method: "DELETE",
-    //     headers: {
-    //         'csrf-token': csrf
-    //     }
-    // })
-    //     .then(result => {
-    //         console.log(result)
-    //     })
-    //     .then(data=>{
-    //         console.log(data)
-    //         productElement.parentNode.removeChild(productElement)
-    //     })
-    //     .catch(err => {
-    //         console.log(err)
-    //     })
-
+    accordionElement.parentNode.removeChild(accordionElement)
+    panelElement.parentNode.removeChild(panelElement)
+    
+    fetch(`/liste/delete/${activiteId}`,{
+        method: "DELETE",
+        // headers: {
+        //     'csrf-token': csrf
+        // }
+    })
 }

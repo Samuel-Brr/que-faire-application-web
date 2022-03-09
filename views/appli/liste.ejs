@@ -9,7 +9,7 @@
             <section class="accordion-container">
                 <% for (let activite of activites) { %>
                     <button id="<%= activite._id %>" class="accordion"><h2><%= activite.activity %></h2></button>
-                        <article class="panel">
+                        <article id="panel-<%= activite._id %>" class="panel">
                             <p>
                                 Accessibility: <strong><%= activite.accessibility %></strong>
                             </p>

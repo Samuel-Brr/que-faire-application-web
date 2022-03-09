@@ -45,5 +45,14 @@ exports.postListe = (req,res,next) => {
 }
 
 exports.deleteListItem = (req,res,next) => {
-  
+  const activiId = req.params.activiteId;
+  console.log(activiId)
+  Activite.findOne({_id: activiId})
+  .then(activite => {
+    if (!activite) {
+      return next(new Error('Activité introuvable 😬'));
+    }
+    
+    return Activite.deleteOne({ _id: activiId});
+  })
 }
