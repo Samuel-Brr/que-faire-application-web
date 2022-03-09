@@ -33,6 +33,8 @@ const postActivite = () => {
         body: JSON.stringify(monActivite),
         headers: {'content-type': 'application/json'}
     })
+        .then(() => window.alert("Nouvelle activité ajoutée à votre liste d'envies ! 😁"))
+        .catch(err => console.log(err))
 }
 
 boutonAjout.addEventListener('click', postActivite)

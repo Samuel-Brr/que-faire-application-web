@@ -1,0 +1,1 @@
+Render la liste d'activité sur l'ui depuis la bd
