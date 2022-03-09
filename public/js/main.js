@@ -37,4 +37,6 @@ const postActivite = () => {
         .catch(err => console.log(err))
 }
 
-boutonAjout.addEventListener('click', postActivite)
+if(boutonAjout){
+    boutonAjout.addEventListener('click', postActivite)
+}

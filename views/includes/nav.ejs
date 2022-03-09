@@ -4,10 +4,14 @@
     </div>
     <nav>
         <ul>
-            <li><a href="/liste">Liste d'envies</a></li>
-            <li><a href="/auth/connexion">Se connecter</a></li>
-            <li><a href="/auth/inscription">S'inscrire</a></li>
-            <li><a href="#">Se déconnecter</a></li>
+            <% if (isAuthenticated) { %>
+                <li><a href="/liste">Liste d'envies</a></li>
+                <li><a href="#">Se déconnecter</a></li>
+            <% } %>
+            <% if (!isAuthenticated) { %>
+                <li><a href="/auth/connexion">Se connecter</a></li>
+                <li><a href="/auth/inscription">S'inscrire</a></li>
+            <% } %>
         </ul>
     </nav>
 </header>
