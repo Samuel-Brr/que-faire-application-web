@@ -5,9 +5,9 @@
     <%- include('../includes/nav.ejs') %>
     <main>
         <% if(errorMessage) { %>
-            <div class="user-message user-message--error"><%= errorMessage %></div>
+            <div class="errorMsg"><%= errorMessage %></div>
         <% } %>
-        <form class="login-form" action="/signup" method="POST" novalidate>
+        <form class="login-form" action="/auth/connexion" method="POST" novalidate>
             <div class="form-control">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email">

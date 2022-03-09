@@ -7,6 +7,14 @@ const router = express.Router();
 
 router.get('/connexion', authController.getConnexion);
 
+router.post('/connexion',
+    check('email',
+          'Please enter a valid email.')
+        .isEmail()
+        .normalizeEmail(), 
+    authController.postConnexion
+    )
+
 router.get('/inscription', authController.getInscription);
 
 router.post('/inscription',
